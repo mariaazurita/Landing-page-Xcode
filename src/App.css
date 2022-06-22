@@ -1,38 +1,175 @@
-.App {
-  text-align: center;
+
+.App-sizing {
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  background-image: url("./imagenfondo.jpg");
+  background-size:100%;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-container {
+  width: 80%;
+  height: fit-content;
+  display:flex;
+  flex-direction: column;
+  justify-self: center;
+  align-self: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Top-container {
+  display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Intro {
+  width: 66%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color:aliceblue;
 }
 
-.App-link {
-  color: #61dafb;
+.Intro h1 {
+  margin: 0;
+  font-size: 6vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Intro h4 {
+  font-size: 2vw;
+  margin: 0;
+}
+
+.Iframe {
+  width: 80%;
+  height: 55vh;
+  align-self: center;
+  justify-self: center;
+  border-radius: 10px;
+}
+
+
+.Comunication-form {
+  margin-top: 10vh;
+  background-color: rgb(40, 44, 52, .57);
+  width: 33%;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  
+}
+
+.Comunication-form label{
+  margin-bottom: 0px;
+  color: aliceblue;
+  font-size: 2.5vw;
+}
+
+.Comunication-form p{
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: aliceblue;
+  font-size: 1vw;
+}
+
+.Comunication-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Info {
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 1rem;
+  width: 80%;
+  align-self: center;
+  background-color: aliceblue;
+  background-repeat: no-repeat;
+  border: 2px solid black;
+  outline: none;
+}
+
+
+
+.Info:focus {
+
+  border: 2px solid #555;
+}
+
+.Info-message {
+  border-radius: 10px;
+  padding: 10px;
+  height: 20vh;
+  margin-bottom: 1rem;
+  width: 80%;
+  align-self: center;
+  border: 2px solid black;
+  resize: none;
+  outline: none;
+  background-color: aliceblue;
+}
+
+.Info-message:focus {
+  border: 2px solid #555;
+}
+
+.Comunication-form button {
+  padding: 10px;
+  margin: auto;
+  background-color: rgb(128, 128, 128);
+  border-radius: 20px;
+  width: 6rem;
+  border: none;
+  cursor: pointer;
+}
+
+.Comunication-form button:hover {
+  background-color: rgb(0, 0, 0, .75);
+  color: aliceblue;
+}
+
+.Services-section {
+  margin-top: 7%;
+  align-self: center;
+  background-color:  rgb(40, 44, 52, .57);
+  width: 100%;
+  font-size: 1.5vw;
+  text-align: center;
+  color: aliceblue;
+  height: 60vh;
+  margin-bottom: 10vh;
+  border-radius: 5px;
+}
+
+.Services {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Service-title {
+  font-size: 2vw;
+}
+
+.Services-offered {
+  width: 30%;
+  height: 35vh;
+  background-color: rgb(128, 128, 128, .80);
+  border-radius: 5px;
+
+}
+
+.Icons-div {
+  padding: 5px;
+  margin-top: 1.5vh;
+}
+
+.Service-icons{
+  font-size: 2.5vw;
+}
+
+.Services-offered p{
+  margin: 0;
+  font-size: 1.3vw;
+  padding: 1vw;
+
 }
