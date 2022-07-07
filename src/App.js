@@ -8,6 +8,8 @@ import axios from 'axios'
 import { useState } from 'react';
 // ES6 Modules or TypeScript
 import Swal from 'sweetalert2'
+//:) Listo para desplegar todo menos fechas. ehkse
+//bhedbksd dhii jhoia ijcai 
 
 export const Axios = axios.create({
   baseURL: 'http://localhost/Xcode-LandingPage/',
