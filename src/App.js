@@ -12,7 +12,7 @@ import Swal from 'sweetalert2'
 //bhedbksd dhii jhoia ijcai 
 
 export const Axios = axios.create({
-  baseURL: 'http://localhost/Xcode-LandingPage/',
+  baseURL: 'http://localhost/Xcode-Landing-Page-backend/',
 });
 
 function App() {
@@ -25,9 +25,22 @@ function App() {
 
   async function sendInfo() {
 
-    const fecha = new Date();
-    fecha.toUTCString();
 
+
+    function padTo2Digits(num) {
+      return num.toString().padStart(2, '0');
+    }
+
+    function formatDate(date) {
+      return [
+        padTo2Digits(date.getDate()),
+        padTo2Digits(date.getMonth() + 1),
+        date.getFullYear(),
+      ].join('-');
+    }
+
+    let fecha = formatDate(new Date());
+    
     const {data} = await Axios.post('index.php',JSON.stringify({
       name: name,
       email: email,
