@@ -89,7 +89,17 @@
   outline: none;
 }
 
-
+.Wrong-info {
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 1rem;
+  width: 80%;
+  align-self: center;
+  background-color: aliceblue;
+  background-repeat: no-repeat;
+  border: 2px solid rgb(154, 4, 4);
+  outline: none;
+}
 
 .Info:focus {
 
@@ -104,6 +114,19 @@
   width: 80%;
   align-self: center;
   border: 2px solid black;
+  resize: none;
+  outline: none;
+  background-color: aliceblue;
+}
+
+.Wrong-info-message {
+  border-radius: 10px;
+  padding: 10px;
+  height: 20vh;
+  margin-bottom: 1rem;
+  width: 80%;
+  align-self: center;
+  border: 2px solid rgb(154, 4, 4);
   resize: none;
   outline: none;
   background-color: aliceblue;

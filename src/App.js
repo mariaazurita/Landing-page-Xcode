@@ -17,15 +17,14 @@ export const Axios = axios.create({
 
 function App() {
 
-
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
+  const [error, setError] = useState({});
+  const [pressed, setPressed] = useState(false);
 
   async function sendInfo() {
-
-
 
     function padTo2Digits(num) {
       return num.toString().padStart(2, '0');
@@ -58,10 +57,68 @@ function App() {
     Swal.fire(
       data.success,
       data.command,
-      'question'
+      'success'
     )
   }
 
+}
+
+function validateInfo(provinence) {
+
+  const emailRegex = /\S+@\S+\.\S+/;
+  const phoneRegex = /^[0-9]{10}$/;
+
+  let errors = {};
+  
+  if (name == '') {
+    errors.name = true;
+  } else errors.name = false; 
+  
+  if (email == '') {
+    errors.email = true;
+  } else if (!emailRegex.test(email)) {
+    errors.email = true;
+  } else errors.email = false;
+    
+  if (phone == '') {
+    errors.phone = true;
+  } else if (!phoneRegex.test(phone)){
+    errors.phone = true;
+  } else errors.phone = false;
+
+  if (message == '') {
+    errors.message = true;
+  } else errors.message = false;
+  
+
+  if(provinence == true) {
+
+  if(errors.name || errors.email || errors.phone || errors.message) {
+    setError(errors);
+    setPressed(true)
+    Swal.fire(
+      'Ingrese datos validos',
+      'No se aceptan campos vacios',
+      'error'
+    )
+  } else {
+    sendInfo();
+  }
+} else {
+  return errors
+}
+
+}
+
+function handleBlur(e) {
+  if(pressed){
+  let errors = validateInfo(false);
+  let check = {...error}
+  if(!(check[e.target.name] == errors[e.target.name])) {
+    check[e.target.name] = errors[e.target.name];
+  }
+  setError(check);
+}
 }
 
   return (
@@ -80,11 +137,11 @@ function App() {
 
             <div className='Form'>
 
-              <input type='Text' required className ='Info' value={name} onChange={e=>setName(e.target.value)} placeholder='Nombre'></input>
-              <input type='email' required className ='Info' value={email} onChange={e=>setEmail(e.target.value)} placeholder='Email'></input>
-              <input type='phone' required className ='Info' value={phone} onChange={e=>setPhone(e.target.value)} placeholder='Número de telefono'></input>
-              <textarea required className ='Info-message' value={message} onChange={e=>setMessage(e.target.value)} placeholder='Mensaje....'></textarea>
-              <button onClick={()=>sendInfo()}> Submit </button>
+              <input type='Text' required className ={!error.name? 'Info':'Wrong-info'} value={name} name='name' onChange={e=>setName(e.target.value)} onBlur={(e)=>handleBlur(e)} placeholder='Nombre'></input>
+              <input type='email' required className ={!error.email? 'Info':'Wrong-info'} value={email} name='email' onChange={e=>setEmail(e.target.value)} onBlur={(e)=>handleBlur(e)} placeholder='Email'></input>
+              <input type='phone' required className ={!error.phone? 'Info':'Wrong-info'} value={phone} name='phone' onChange={e=>setPhone(e.target.value)} onBlur={(e)=>handleBlur(e)} placeholder='Número de telefono'></input>
+              <textarea required className ={!error.message? 'Info-message':'Wrong-info-message'} name='message' value={message} onChange={e=>setMessage(e.target.value)} onBlur={(e)=>handleBlur(e)} placeholder='Mensaje....'></textarea>
+              <button onClick={()=>validateInfo(true)}> Submit </button>
 
             </div>
 
