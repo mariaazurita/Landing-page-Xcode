@@ -59,6 +59,11 @@ function App() {
       data.command,
       'success'
     )
+    setEmail('');
+    setMessage('')
+    setName('')
+    setPhone('')
+    setPressed(false)
   }
 
 }
@@ -70,28 +75,28 @@ function validateInfo(provinence) {
 
   let errors = {};
   
-  if (name == '') {
+  if (name === '') {
     errors.name = true;
   } else errors.name = false; 
   
-  if (email == '') {
+  if (email === '') {
     errors.email = true;
   } else if (!emailRegex.test(email)) {
     errors.email = true;
   } else errors.email = false;
     
-  if (phone == '') {
+  if (phone === '') {
     errors.phone = true;
   } else if (!phoneRegex.test(phone)){
     errors.phone = true;
   } else errors.phone = false;
 
-  if (message == '') {
+  if (message === '') {
     errors.message = true;
   } else errors.message = false;
   
 
-  if(provinence == true) {
+  if(provinence === true) {
 
   if(errors.name || errors.email || errors.phone || errors.message) {
     setError(errors);
@@ -114,7 +119,7 @@ function handleBlur(e) {
   if(pressed){
   let errors = validateInfo(false);
   let check = {...error}
-  if(!(check[e.target.name] == errors[e.target.name])) {
+  if(!(check[e.target.name] === errors[e.target.name])) {
     check[e.target.name] = errors[e.target.name];
   }
   setError(check);
@@ -129,6 +134,41 @@ function handleBlur(e) {
           <div className='Intro'>
             <h1> Xcode </h1>
             <h4> Consultoria </h4>
+            <div className='Services-section'>
+              <h2> Servicios </h2>
+              <div className='Services'>
+                <div className='Services-offered'>
+
+                  <div className='Icons-div'>
+                    <FontAwesomeIcon className='Service-icons' icon={faUserTie} />
+                  </div>
+
+                  <h3 className='Service-title'> Asesoria y consultoria </h3>
+                  <p> Ayudamos a su empresa a personalizar su infraestructura de forma eficiente y rentable.  </p>
+                
+                </div>
+
+                <div className='Services-offered'>
+                  <div className='Icons-div'>
+                    <FontAwesomeIcon className='Service-icons' icon={faLaptopCode} />
+                  </div>
+
+                  <h3 className='Service-title'> Desarrollo de software </h3>
+                  <p> Proyectos de Desarrollo de Software basados en satisfacer las necesidades y especificaciones del cliente. </p>
+                </div>
+
+                <div className='Services-offered'>
+                  <div className='Icons-div'>
+                    <FontAwesomeIcon className='Service-icons' icon={faDiagramProject} />
+                  </div>
+                  
+                  <h3 className='Service-title'> Gestion de proyectos TI</h3>
+                  <p> Guia del proyecto en todas sus etapas. Inicio, planificación, ejecución, supervisión y  cierre. </p>
+                </div>      
+
+              </div> 
+
+            </div>
           </div>
 
           <div className='Comunication-form'>
@@ -148,38 +188,6 @@ function handleBlur(e) {
             {/*<iframe className='Iframe' src="https://21dev.xyz/xcode_form/" />  */}
 
           </div>
-
-        </div>
-
-        <div className='Services-section'>
-          <h1> Servicios </h1>
-          <div className='Services'>
-            <div className='Services-offered'>
-              <div className='Icons-div'>
-                <FontAwesomeIcon className='Service-icons' icon={faUserTie} />
-              </div>
-              <h1 className='Service-title'> Asesoria y consultoria </h1>
-              <p> Ayudamos a su empresa a personalizar su infraestructura de forma eficiente y rentable.  </p>
-            </div>
-
-            <div className='Services-offered'>
-              <div className='Icons-div'>
-                <FontAwesomeIcon className='Service-icons' icon={faLaptopCode} />
-              </div>
-              <h1 className='Service-title'> Desarrollo de software </h1>
-              <p> Proyectos de Desarrollo de Software basados en satisfacer las necesidades y especificaciones del cliente. </p>
-              </div>
-
-            <div className='Services-offered'>
-              <div className='Icons-div'>
-                <FontAwesomeIcon className='Service-icons' icon={faDiagramProject} />
-              </div>
-              <h1 className='Service-title'> Gestion de proyectos TI</h1>
-              <p> Guia del proyecto en todas sus etapas. 
-                Inicio, planificación, ejecución, supervisión y  cierre. </p>
-            </div>      
-
-          </div> 
 
         </div>
 

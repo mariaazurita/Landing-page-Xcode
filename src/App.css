@@ -5,11 +5,12 @@
   flex-direction: column;
   background-image: url("./imagenfondo.jpg");
   background-size:100%;
+  height: 100vh;
   padding: 0;
 }
 
 .App-container {
-  width: 80%;
+  width: 90%;
   height: fit-content;
   display:flex;
   flex-direction: column;
@@ -22,21 +23,20 @@
 }
 
 .Intro {
-  width: 66%;
+  width: 70%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   color:aliceblue;
 }
 
 .Intro h1 {
   margin: 0;
-  font-size: 6vw;
+  font-size: 4rem;
 }
 
 .Intro h4 {
-  font-size: 2vw;
+  font-size: 1.6rem;
   margin: 0;
 }
 
@@ -52,7 +52,7 @@
 .Comunication-form {
   margin-top: 10vh;
   background-color: rgb(40, 44, 52, .57);
-  width: 33%;
+  width: 30%;
   padding: 20px;
   text-align: center;
   border-radius: 5px;
@@ -62,14 +62,14 @@
 .Comunication-form label{
   margin-bottom: 0px;
   color: aliceblue;
-  font-size: 2.5vw;
+  font-size: 2.5rem;
 }
 
 .Comunication-form p{
   margin-top: 0;
   margin-bottom: 10px;
-  color: aliceblue;
-  font-size: 1vw;
+  color: transparent;
+  font-size: 0rem;
 }
 
 .Form {
@@ -144,6 +144,7 @@
   width: 40%;
   border: 2px solid black; 
   cursor: pointer;
+  font-size: .6rem;
 }
 
 .Comunication-form button:hover {
@@ -152,32 +153,32 @@
 
 .Services-section {
   margin-top: 7%;
-  align-self: center;
   background-color:  rgb(40, 44, 52, .57);
-  width: 100%;
-  font-size: 1.5vw;
+  width: 95%;
+  font-size: 1.3rem;
   text-align: center;
   color: aliceblue;
-  height: 60vh;
-  margin-bottom: 10vh;
+  height: fit-content;
   border-radius: 5px;
 }
 
 .Services {
   display: flex;
   justify-content: space-evenly;
-}
-
-.Service-title {
-  font-size: 2vw;
+  margin-bottom: 5%;
 }
 
 .Services-offered {
   width: 30%;
-  height: 35vh;
+  height: 43vh;
   background-color: rgb(128, 128, 128, .80);
   border-radius: 5px;
 
+}
+
+.Services-offered h3 {
+  font-size: 1rem;
+  padding: 3%;
 }
 
 .Icons-div {
@@ -186,12 +187,12 @@
 }
 
 .Service-icons{
-  font-size: 2.5vw;
+  font-size: 1.3rem;
 }
 
 .Services-offered p{
   margin: 0;
-  font-size: 1.3vw;
-  padding: 1vw;
+  font-size: .9rem;
+  padding: 5%;
 
 }
